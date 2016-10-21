@@ -1,0 +1,2 @@
+/Users/vova/Developer/Lakestone/LakestoneGeometry/Silver/LakestoneGeometry.Tests/obj/Debug/.NETFramework,Version=v4.0.AssemblyAttribute.pas
+/Users/vova/Developer/Lakestone/LakestoneGeometry/Silver/LakestoneGeometry.Tests/obj/Debug/Android/LakestoneGeometry.Tests.jar

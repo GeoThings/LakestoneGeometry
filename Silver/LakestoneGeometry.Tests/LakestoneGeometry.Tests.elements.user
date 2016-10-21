@@ -1,0 +1,7 @@
+
+<Project xmlns='http://schemas.microsoft.com/developer/msbuild/2003'>
+    <PropertyGroup>
+        <CrossBoxDeviceID>04d5f8620d4967d6</CrossBoxDeviceID>
+        <CrossBoxDevice>Nexus 4</CrossBoxDevice>
+    </PropertyGroup>
+</Project>

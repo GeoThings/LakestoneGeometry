@@ -1,0 +1,6 @@
+/Users/vova/Developer/Lakestone/LakestoneGeometry/Silver/LakestoneGeometry.Android/obj/Debug/.NETFramework,Version=v4.0.AssemblyAttribute.pas
+/Users/vova/Developer/Lakestone/LakestoneGeometry/Silver/LakestoneGeometry.Android/bin/Debug/cooper.jar
+/Users/vova/Developer/Lakestone/LakestoneGeometry/Silver/LakestoneGeometry.Android/bin/Debug/LakestoneCore.Android.jar
+/Users/vova/Developer/Lakestone/LakestoneGeometry/Silver/LakestoneGeometry.Android/bin/Debug/swift.jar
+/Users/vova/Developer/Lakestone/LakestoneGeometry/Silver/LakestoneGeometry.Android/bin/Debug/LakestoneGeometry.Android.jar
+/Users/vova/Developer/Lakestone/LakestoneGeometry/Silver/LakestoneGeometry.Android/obj/Debug/Android/LakestoneGeometry.Android.jar
