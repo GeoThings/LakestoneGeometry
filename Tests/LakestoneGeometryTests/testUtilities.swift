@@ -1,4 +1,4 @@
-﻿//
+//
 //  testUtilities.swift
 //  LakestoneCore
 //
@@ -53,7 +53,11 @@ public class Assert {
 	static func AreEqual<T: Equatable>(_ lhs: T, _ rhs: T){
 		XCTAssertEqual(lhs, rhs)
 	}
-	
+    
+    static func AreEqual<T: FloatingPoint>(_ lhs: T, _ rhs: T, _ precision: T){
+        XCTAssertEqualWithAccuracy(lhs, rhs, accuracy: precision)
+    }
+    
 	static func AreEqual<T: Equatable>(_ lhs: [T], _ rhs: [T]){
 		
 		if lhs.count != rhs.count {

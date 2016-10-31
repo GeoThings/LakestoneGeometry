@@ -46,7 +46,7 @@ public class BoundingBox {
 		self.ur = ur
 	}
 	
-	/// Checks if Coordinate is within or on the borders if given BoundingBox
+	/// Checks if Coordinate is within or on the borders of given BoundingBox
 	public func contains(coordinate: Coordinate) -> Bool {
 		
 		if (self.ll.x <= coordinate.x && coordinate.x <= self.ur.x &&
@@ -57,9 +57,29 @@ public class BoundingBox {
 		}
 		
 	}
+    
+    /// List of sides of the BoundingBox (clockwise from left to bottom)
+    public var sides: [Line] {
+        
+        let ul = Coordinate(x: self.ll.x, y: self.ur.y)
+        let lr = Coordinate(x: self.ur.x, y: self.ll.y)
+
+        var sides = [Line]()
+        
+        let leftSide = Line(endpointA: self.ll, endpointB: ul)
+        sides.append(leftSide)
+        let topSide = Line(endpointA: ul, endpointB: self.ur)
+        sides.append(topSide)
+        let rightSide = Line(endpointA: self.ur, endpointB: lr)
+        sides.append(rightSide)
+        let bottomSide = Line(endpointA: lr, endpointB: self.ll)
+        sides.append(bottomSide)
+        
+        return sides
+    }
 }
 
-/// checks if the Coordinate lies on the borders if given BoundingBox
+///Checks if the Coordinate lies on the borders of given BoundingBox
 public func does(boundingBox: BoundingBox, edgesContain coordinate: Coordinate) -> Bool {
 	
 	if ((boundingBox.ll.x == coordinate.x || boundingBox.ur.x == coordinate.x) && (boundingBox.ll.y <= coordinate.y && coordinate.y <= boundingBox.ur.y)) ||

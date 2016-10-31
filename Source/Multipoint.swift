@@ -1,4 +1,4 @@
-﻿//
+//
 //  Multipoint.swift
 //  LakestoneGeometry
 //
@@ -20,93 +20,95 @@
 // limitations under the License.
 //
 
-/*
-#if os(OSX) || os(iOS) || os(watchOS) || os(tvOS)
-	import Darwin.C
-#elseif os(Linux)
-	import Glibc
+#if COOPER
+	import lakestonecore.android
+#else
+	import LakestoneCore
+	import Foundation
 #endif
 
-public struct Multipoint {
+
+public class Multipoint {
 	
-	private enum _IterationState {
-		case outside
-		case onIntersection
-		case inside
-		
-		static func forCoordinate(_ coordinate: Coordinate<Double>, relativeToClippingBox boundingBox: BoundingBox<Double>, isClippingList: Bool) -> _IterationState {
-			
-			var state:_IterationState
-			if boundingBox.contains(coordinate: coordinate){
-				state = .inside
-			} else {
-				state = .outside
-			}
-			
-			if does(boundingBox: boundingBox, edgesContain: coordinate){
-				state = .onIntersection
-			}
-			
-			//corner points should be considered as .inside for clippingList rather then intersection for proper execution of below algo
-			if isClippingList {
-				if Multipoint.from(boundingBox: boundingBox).coordinates.contains(coordinate) {
-					state = .inside
-				}
-			}
-			
-			return state
-		}
-	}
+	//MARK: - Variables
 	
+	public private(set) var coordinates: [Coordinate]
 	
-	public private(set) var coordinates: [Coordinate<Double>]
+	public private(set) var boundingBoxº: BoundingBox?
 	
 	public var length: Int {
 		return self.coordinates.count
 	}
 	
+	//MARK: Derived values
+	
 	public var isPolygon: Bool {
-		return (self.length > 0) && (self.coordinates.first == self.coordinates.last)
-	}
-	
-	public private(set) var boundingBox: BoundingBox<Double>? = nil
-	
-	//reference: http://stackoverflow.com/questions/1165647/how-to-determine-if-a-list-of-polygon-points-are-in-clockwise-order
-	public var isClockwise: Bool {
 		
-		var arealSum: Double = 0
-		if !self.isPolygon {
+		#if COOPER
+		if (self.length <= 1){
 			return false
 		}
+		// to access values and their comparison func we need to use coordinates' array indexes
+		// rather then just first and last element
+		return self.coordinates[0] == self.coordinates[self.coordinates.count - 1]
+			
+		#else
+		return (self.length > 1) && (self.coordinates.first == self.coordinates.last)
+		#endif
+	}
+	
+	//sum of areas under the edges will reduce to Shoelace formula with minus sign
+	//and equals to area of the polygon, with more negative areas when polygon is counterclockwise and positive when clockwise
+	//(opposite to Shoelace, thus the minus)
+	//reference: https://en.wikipedia.org/wiki/Shoelace_formula
+	//Note: won't be correct for self-crossing polygons
+	public var signedArea: Double {
 		
-		//no need to repeat the starting point
+		if !self.isPolygon {
+			return 0
+		}
+		var arealSum = 0.0
+		
+		//need to iterate through every edge and calculate the area under it (x2-x1)*[0.5*(y2+y1)]
+		//alternatively can calculate 0.5*(x2*y1-x1*y2) as in Shoelace formula, which probably is slower
 		for coordinateIndex in 1 ..< self.length {
 			
 			let lineStart = self.coordinates[coordinateIndex - 1]
 			let lineEnd = self.coordinates[coordinateIndex]
 			
-			arealSum += (lineEnd.x - lineStart.x) * (lineEnd.y + lineStart.y)
+			arealSum += (lineEnd.x - lineStart.x) * (lineEnd.y + lineStart.y) * 0.5
 		}
 		
-		return (arealSum > 0)
+		return arealSum
 	}
 	
-	public static func from(boundingBox: BoundingBox<Double>) -> Multipoint {
+	//should work for both convex and concave polygons, but for self-crossing ones detects if bigger part is clockwise
+	//reference: http://stackoverflow.com/questions/1165647/how-to-determine-if-a-list-of-polygon-points-are-in-clockwise-order
+	public var isClockwise: Bool {
+		
+		return self.signedArea > 0
+	}
+	
+	//MARK: - Initializers
+	
+	public static func from(boundingBox: BoundingBox) -> Multipoint {
+		
 		let upperLeft = Coordinate(x: boundingBox.ll.x, y: boundingBox.ur.y)
 		let upperRight = boundingBox.ur
 		let lowerRight = Coordinate(x: boundingBox.ur.x, y: boundingBox.ll.y)
 		let lowerLeft = boundingBox.ll
 		
-		return Multipoint(coordinates: [upperLeft, upperRight, lowerRight, lowerLeft, upperLeft])
+		return Multipoint(coordinates: [lowerLeft, upperLeft, upperRight, lowerRight, lowerLeft])
 	}
 	
-	public init(coordinates: [Coordinate<Double>]){
+	public init(coordinates: [Coordinate]) {
+		
 		self.coordinates = coordinates
 		
 		_initBoundingBox()
 	}
 	
-	private mutating func _initBoundingBox(){
+	private func _initBoundingBox(){
 		
 		if self.coordinates.count < 2 {
 			return
@@ -133,11 +135,19 @@ public struct Multipoint {
 			}
 		}
 		
-		self.boundingBox = BoundingBox(ll: Coordinate(x: minX, y: minY), ur: Coordinate(x: maxX, y: maxY))
+		do {
+			self.boundingBoxº = try BoundingBox(ll: Coordinate(x: minX, y: minY), ur: Coordinate(x: maxX, y: maxY)) 
+		} catch {
+			print("Multipoint bounding box: \(castedError(error))")
+		}
 	}
 	
-	//not to confuse with next method, this returns line segments, whether the next one yields polygons
-	public mutating func polylineClipped(toBoundingBox boundingBox: BoundingBox<Double>) -> [Multipoint] {
+	//MARK: - Clipping and intersection functions
+	
+	///Clip the line part which is within the BoundingBox
+	///- Note: not to confuse with poligon clip method, this returns line segments, 
+	///  while the next one yields polygons
+	public func polylineClipped(toBoundingBox boundingBox: BoundingBox) -> [Multipoint] {
 		
 		var subjectList = self.coordinates
 		
@@ -152,12 +162,16 @@ public struct Multipoint {
 		}
 		
 		for (insertBaseIndex, intersectionPoint) in intersectionPointsInfo {
+			#if COOPER
+			subjectList.insert(intersectionPoint, atIndex: insertBaseIndex + insertionOffset)
+			#else
 			subjectList.insert(intersectionPoint, at: insertBaseIndex + insertionOffset)
+			#endif
 			insertionOffset += 1
 		}
 		
 		var clippedPolylines = [Multipoint]()
-		var currentPolylinePoints = [Coordinate<Double>]()
+		var currentPolylinePoints = [Coordinate]()
 		
 		for coordinate in subjectList {
 			if boundingBox.contains(coordinate: coordinate) {
@@ -173,13 +187,13 @@ public struct Multipoint {
 	
 	
 	//Weiler–Atherton_clipping_algorithm
-	public mutating func polygonClipped(toBoundingBox boundingBox: BoundingBox<Double>) -> [Multipoint] {
+	public mutating func polygonClipped(toBoundingBox boundingBox: BoundingBox) -> [Multipoint] {
 		
 		if !self.isPolygon {
 			return []
 		}
 		
-		self.makeClockwised()
+		//self.makeClockwised()
 		
 		// PART 1: Forming a clipping region polygon and subject polygon list
 		var clippingList = Multipoint.from(boundingBox: boundingBox).coordinates
@@ -227,7 +241,7 @@ public struct Multipoint {
 		// As soon as we reach a next intersection we jump to another list back and force until our looping reaches the original intersection
 		
 		var clippedPolygons = [Multipoint]()
-		var currentPolygonPoints = [Coordinate<Double>]()
+		var currentPolygonPoints = [Coordinate]()
 		
 		var nonLinkedIntersectionCount = intersectionPointsInfo.count
 		var currentIterator = subjectCircularIterator
@@ -241,11 +255,11 @@ public struct Multipoint {
 			guard let currentCoordinate = currentIterator.next(),
 				let nextCoordinate = currentIterator.nextToReturn
 				else {
-					Log.w("Clipping algorithm returned empty element during sequence iteration. Clipping or subject list is empty. Clipping cancelled.")
+					//Log.w("Clipping algorithm returned empty element during sequence iteration. Clipping or subject list is empty. Clipping cancelled.")
 					return []
 			}
-			let currentCoordinateState = _IterationState.forCoordinate(currentCoordinate, relativeToClippingBox: boundingBox, isClippingList: (currentIterator === clippingCircularIterator))
-			let nextCoordianteState = _IterationState.forCoordinate(nextCoordinate, relativeToClippingBox: boundingBox, isClippingList: (currentIterator === clippingCircularIterator))
+			let currentCoordinateState = forCoordinate(currentCoordinate, relativeToClippingBox: boundingBox, isClippingList: (currentIterator === clippingCircularIterator))
+			let nextCoordianteState = forCoordinate(nextCoordinate, relativeToClippingBox: boundingBox, isClippingList: (currentIterator === clippingCircularIterator))
 			
 			
 			if isSearchingLinkingPoint && currentCoordinate != currentPolygonPoints.last {
@@ -274,7 +288,7 @@ public struct Multipoint {
 				}
 				
 				//on intersection, time to jump to next list and start searching for it
-				if currentCoordinateState == .onIntersection {
+				if currentCoordinateState == _IterationState.onIntersection {
 					currentIterator = (currentIterator === subjectCircularIterator) ? clippingCircularIterator : subjectCircularIterator
 					isSearchingLinkingPoint = true
 					
@@ -284,7 +298,9 @@ public struct Multipoint {
 			} else {
 				
 				//if we have found the inbound intersection that hasn't yet formed a polygon, great, let's start constructing a new polygon then
-				if currentCoordinateState == .onIntersection && nextCoordianteState != .outside && !(clippedPolygons.contains { $0.coordinates.contains(currentCoordinate) }) {
+				if currentCoordinateState == _IterationState.onIntersection &&
+					nextCoordianteState != _IterationState.outside &&
+					!(clippedPolygons.contains { $0.coordinates.contains(currentCoordinate) }) {
 					isConstructingPolygon = true
 					
 					currentPolygonPoints.append(currentCoordinate)
@@ -296,50 +312,31 @@ public struct Multipoint {
 		return clippedPolygons
 	}
 	
-	mutating public func makeClockwised(){
-		
-		if self.isClockwise {
-			return
-		}
-		
-		self.coordinates = self.coordinates.reversed()
-	}
-	
-	public func intesectionPoints(withBoundingBox boundingBox: BoundingBox<Double>) -> [(Int, Coordinate<Double>)] {
+	///Find all intersections with a bounding box
+    /// - Returns: list of (index, coordinate) tuples, index starts from 1.
+    /// It stores the edge number having the intersection and coordinate of the intersection point
+	public func intesectionPoints(withBoundingBox boundingBox: BoundingBox) -> [(Int, Coordinate)] {
 		
 		if self.length < 2 {
 			return []
 		}
 		
-		
 		var ignoreFirstPointFlag: Bool = false
-		var intersectionPoints = [(Int, Coordinate<Double>)]()
+		var intersectionPoints = [(Int, Coordinate)]()
 		for coordinateIndex in 1 ..< self.length  {
+			//iterate through sides of the polyline or polygon
+			let polyEdgeStart = self.coordinates[coordinateIndex - 1]
+			let polyEdgeEnd = self.coordinates[coordinateIndex]
+			let polyEdge = Line(endpointA: polyEdgeStart, endpointB: polyEdgeEnd)
 			
-			let firstLineStart = self.coordinates[coordinateIndex - 1]
-			let firstLineEnd = self.coordinates[coordinateIndex]
+			var remainingIntersections = polyEdge.numberofIntersections(withBox: boundingBox)
 			
-			var remainingIntersections = 0
-			if boundingBox.contains(coordinate: firstLineStart) && boundingBox.contains(coordinate: firstLineEnd){
-				//line segment insvide bounding box, no intersection
-				continue
-			} else if boundingBox.contains(coordinate: firstLineStart) || boundingBox.contains(coordinate: firstLineEnd){
-				//one point is inside, so one point intersection
-				remainingIntersections = 1
-			} else {
-				//both points are outside segment, 0 or 2 intersections
-				remainingIntersections = 2
-			}
-			
-			let boundingBoxCoordinates = Multipoint.from(boundingBox: boundingBox).coordinates
-			
-			var lineIntersections = [Coordinate<Double>]()
-			for index in 1 ..< boundingBoxCoordinates.count {
-				
-				let lineStart = boundingBoxCoordinates[index - 1]
-				let lineEnd = boundingBoxCoordinates[index]
-				
-				if let intersectionPoint = intersection(ofLineFrom: lineStart, to: lineEnd, withLineFrom: firstLineStart, to: firstLineEnd){
+			var lineIntersections = [Coordinate]()
+			for boundingBoxSide in boundingBox.sides {
+				//iterate through sides of the bounding box
+				//find the intersection of the current side of the BoundingBox with the edge of polygon/polyline
+				if let intersectionPoint = boundingBoxSide.intersection(withLine: polyEdge){
+                    //check that intersection at the first coordinate of the Multipoint isn't counted twice
 					if (intersectionPoint == self.coordinates.first && !ignoreFirstPointFlag){
 						ignoreFirstPointFlag = true
 					} else if (intersectionPoint == self.coordinates.first && ignoreFirstPointFlag){
@@ -349,16 +346,20 @@ public struct Multipoint {
 					
 					lineIntersections.append(intersectionPoint)
 					remainingIntersections -= 1
-				}
-				
-				if remainingIntersections == 0 {
-					break
+                    
+                    //exit earlier if every intersection for the edge of Multiline already found
+                    if remainingIntersections == 0 {
+                        break
+                    }
 				}
 			}
-			
-			lineIntersections.sort { (lhs: Coordinate<Double>, rhs: Coordinate<Double>) -> Bool in
-				return distance(fromPoint: firstLineStart, toPoint: lhs) < distance(fromPoint: firstLineStart, toPoint: rhs)
+			//sort intersections along the edge from start to end
+			lineIntersections.sort { (lhs: Coordinate, rhs: Coordinate) -> Bool in
+				return distanceBetween(fromPoint: polyEdgeStart, toPoint: lhs) < distanceBetween(fromPoint: polyEdgeStart, toPoint: rhs)
 			}
+            //TODO: 1. check why the sorting doesn't work and makes duplicates in Java
+            //2. handle the case when the edge lies on the bounding box side properly 
+            //(currently the intersection point will be added if there is an intersection with another side)
 			
 			for lineIntersection in lineIntersections {
 				intersectionPoints.append((coordinateIndex, lineIntersection))
@@ -368,30 +369,91 @@ public struct Multipoint {
 		return intersectionPoints
 	}
 	
-	//reference #0: http://alienryderflex.com/polygon/
-	//reference #1: http://stackoverflow.com/a/31636218/2380455
-	public func contains(coordinate: Coordinate<Double>) -> Bool {
+	//MARK: - Internal Utils
+	
+	public func makeClockwised(){
 		
+		if self.isClockwise {
+			return
+		}
+		// requires explicit conversion to list to work with Java
+		self.coordinates = [Coordinate](self.coordinates.reversed())
+	}
+	
+	///Check if the coordinate is within the polygon enclosed by the given Multipoint.
+	/// This algorithm does not care whether the polygon is traced in clockwise or counterclockwise fashion.
+	/// - Parameters:
+	///   - coordinate: point of type Coordinate
+	/// - Note: The roundoff errors may lead to false detection when the point is very close to the edge
+	/// - reference #0: http://alienryderflex.com/polygon/
+	/// - reference #1: http://stackoverflow.com/a/31636218/2380455
+	public func contains(coordinate: Coordinate) -> Bool {
+		
+		//if a multiline isn't a polygon, then it contains a point iff it is one of the set of coordinates
 		if !self.isPolygon {
 			return self.coordinates.contains(coordinate)
 		}
 		
+		//make the previous vertex equal to last polygon's coordinate
 		guard var pJ = self.coordinates.last else {
 			return false
 		}
 		
+		//if the input coordinate belongs to the polygon's vertices, there's no need to check intersections
+		if self.coordinates.contains(coordinate) { return true }
+		
+		// iterate through edges and check that number of intersections on the right is odd
 		var contains = false
 		for pI in self.coordinates {
-			if ( ((pI.y >= coordinate.y) != (pJ.y >= coordinate.y)) &&
-				(coordinate.x <= (pJ.x - pI.x) * (coordinate.y - pI.y) / (pJ.y - pI.y) + pI.x) ){
-				
-				contains = !contains
+			// if an edge crosses a line of given point's y coordinate
+			if ((pI.y >= coordinate.y) != (pJ.y >= coordinate.y)) {
+				//in case if the point is on the edge counting other intersections is not necessary
+				if does(point: coordinate, liesOnTheLine: Line(endpointA: pJ, endpointB: pI)) {
+					return true
+				} else {
+					//check if coordinate is on the left from the line through pJ-pI or on it
+					//by checking cross product against zero depending on upward or downward direction of pJ-pI
+					if (coordinate.x <= (pJ.x - pI.x) * (coordinate.y - pI.y) / (pJ.y - pI.y) + pI.x) {
+						contains = !contains
+					}
+				}
 			}
-			
+			// pick the next point
 			pJ = pI
 		}
 		
 		return contains
 	}
+	
+	//MARK: enum and state switching function
+	//currently needed only for clipping function
+	
+	private enum _IterationState {
+		case outside
+		case onIntersection
+		case inside
+	}
+	
+	private static func forCoordinate(_ coordinate: Coordinate, relativeToClippingBox boundingBox: BoundingBox, isClippingList: Bool) -> _IterationState {
+		
+		var state: _IterationState
+		if boundingBox.contains(coordinate: coordinate){
+			state = .inside
+		} else {
+			state = .outside
+		}
+		
+		if does(boundingBox: boundingBox, edgesContain: coordinate){
+			state = .onIntersection
+		}
+		
+		//corner points should be considered as .inside for clippingList rather then intersection for proper execution of below algo
+		if isClippingList {
+			if Multipoint.from(boundingBox: boundingBox).coordinates.contains(coordinate) {
+				state = .inside
+			}
+		}
+		
+		return state
+	}
 }
-*/

@@ -1,4 +1,4 @@
-﻿//
+//
 //  Coordinate.swift
 //  LakestoneGeometry
 //
@@ -28,6 +28,14 @@
     import Foundation
 #endif
 
+// these are needed for math functions, java would just use Math.<function_name>
+#if os(OSX) || os(iOS) || os(watchOS) || os(tvOS)
+    import Darwin.C
+#elseif os(Linux)
+    import Glibc
+#endif
+
+
 //MARK: - Coordinate using Double type
 
 public class Coordinate {
@@ -56,6 +64,17 @@ public class Coordinate {
         self.x = x as! Double
         self.y = y as! Double
     }
+}
+
+//MARK: Operations on Coordinates
+
+public func distanceBetween(fromPoint pointA: Coordinate, toPoint pointB: Coordinate) -> Double {
+    
+    #if COOPER
+        return Math.sqrt(Line(endpointA: pointA, endpointB: pointB).squaredLength)
+    #else
+        return sqrt(Line(endpointA: pointA, endpointB: pointB).squaredLength)
+    #endif
 }
 
 //MARK: CustomStringConvertable
@@ -103,6 +122,9 @@ extension Coordinate: Equatable {
 public func ==(lhs: Coordinate, rhs: Coordinate) -> Bool {
     return (lhs.x == rhs.x && lhs.y == rhs.y)
 }
+
+
+//-----------------------------------------------------------------------------------
 
 //MARK: - Coordinate using Int type
 
