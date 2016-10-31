@@ -4,6 +4,12 @@
 <dict>
 	<key>ActiveProject</key>
 	<string>LakestoneGeometry.Tests</string>
+	<key>ActiveProjectFor_file:///Users/vova/Developer/Lakestone/LakestoneGeometry/Silver/LakestoneGeometry.Shared/LakestoneGeometry.Shared.elements_file:///Users/vova/Developer/Lakestone/LakestoneGeometry/Source/Line.swift</key>
+	<string>file:///Users/vova/Developer/Lakestone/LakestoneGeometry/Silver/LakestoneGeometry.Android/LakestoneGeometry.Android.elements</string>
+	<key>ActiveProjectFor_file:///Users/vova/Developer/Lakestone/LakestoneGeometry/Silver/LakestoneGeometry.Shared/LakestoneGeometry.Shared.elements_file:///Users/vova/Developer/Lakestone/LakestoneGeometry/Source/Multipoint.swift</key>
+	<string>file:///Users/vova/Developer/Lakestone/LakestoneGeometry/Silver/LakestoneGeometry.Android/LakestoneGeometry.Android.elements</string>
+	<key>ActiveProjectFor_file:///Users/vova/Developer/Lakestone/LakestoneGeometry/Silver/LakestoneGeometry.Shared/LakestoneGeometry.Shared.elements_file:///Users/vova/Developer/Lakestone/LakestoneGeometry/Source/Utilities.swift</key>
+	<string>file:///Users/vova/Developer/Lakestone/LakestoneGeometry/Silver/LakestoneGeometry.Tests/LakestoneGeometry.Tests.elements</string>
 	<key>DebugInspectorExpanded_Locals</key>
 	<true/>
 	<key>DebugInspectorExpanded_|lhs: lakestonegeometry.tests.Coordinate</key>
@@ -17,6 +23,10 @@
 	<key>DebugInspectorExpanded_|rhs: lakestonegeometry.tests.Coordinate|$p_x: lakestonecore.android.BoxedInt</key>
 	<true/>
 	<key>DebugInspectorExpanded_|rhs: lakestonegeometry.tests.Coordinate|$p_x: lakestonecore.android.BoxedInt|[lakestonecore.android.BoxedInt]: lakestonecore.android.BoxedInt</key>
+	<true/>
+	<key>DebugInspectorExpanded_|testCoordinate1: lakestonegeometry.tests.Coordinate</key>
+	<true/>
+	<key>DebugInspectorExpanded_|testCoordinate2: lakestonegeometry.tests.Coordinate</key>
 	<true/>
 	<key>DebugInspectorExpanded_|testCoordinateDouble: lakestonegeometry.tests.Coordinate</key>
 	<true/>
@@ -44,8 +54,12 @@
 	<true/>
 	<key>DebugInspectorExpanded_|testCoordinateInt: lakestonegeometry.tests.Coordinate|$p_y: lakestonecore.android.BoxedInt|[lakestonecore.android.BoxedInt]: lakestonecore.android.BoxedInt</key>
 	<true/>
+	<key>DebugInspectorExpanded_|testLine1: lakestonegeometry.tests.Line</key>
+	<true/>
+	<key>DebugInspectorExpanded_|testLine2: lakestonegeometry.tests.Line</key>
+	<true/>
 	<key>DebugPaneActiveTab</key>
-	<real>0.0</real>
+	<real>1</real>
 	<key>ExplorerSplitter</key>
 	<real>223</real>
 	<key>ExplorerSplitterCollapsed</key>
@@ -75,21 +89,21 @@
 	<key>Properties</key>
 	<dict/>
 	<key>SelectedNode</key>
-	<string>file:///Users/vova/Developer/Lakestone/LakestoneGeometry/Silver/LakestoneGeometry.Tests/LakestoneGeometry.Tests.elements_file:///Users/vova/Developer/Lakestone/LakestoneGeometry/Tests/LakestoneGeometryTests/TestBoundingBox.swift</string>
+	<string>file:///Users/vova/Developer/Lakestone/LakestoneGeometry/Silver/LakestoneGeometry.Tests/LakestoneGeometry.Tests.elements_file:///Users/vova/Developer/Lakestone/LakestoneGeometry/Tests/LakestoneGeometryTests/TestMultiPoint.swift</string>
 	<key>ViewMetaData</key>
 	<dict>
 		<key>/Users/vova/Developer/Lakestone/LakestoneGeometry/Silver/LakestoneGeometry.sln---BuildLog</key>
 		<dict>
 			<key>CursorX</key>
-			<integer>194</integer>
+			<integer>66</integer>
 			<key>CursorY</key>
 			<integer>57</integer>
 			<key>ScrollX</key>
-			<real>335</real>
+			<real>0.0</real>
 			<key>ScrollY</key>
-			<real>334</real>
+			<real>22047</real>
 			<key>ScrolledToBottom</key>
-			<false/>
+			<true/>
 			<key>SelectionCursorUndecided</key>
 			<false/>
 			<key>SelectionEndColumn</key>
@@ -175,9 +189,9 @@
 		<key>file:///Users/vova/Developer/Lakestone/LakestoneGeometry/Silver/LakestoneGeometry.Shared/LakestoneGeometry.Shared.elements_file:///Users/vova/Developer/Lakestone/LakestoneGeometry/Source/Coordinate.swift</key>
 		<dict>
 			<key>CursorX</key>
-			<integer>13</integer>
+			<integer>1</integer>
 			<key>CursorY</key>
-			<integer>108</integer>
+			<integer>149</integer>
 			<key>ScrollX</key>
 			<real>0.0</real>
 			<key>ScrollY</key>
@@ -195,16 +209,62 @@
 			<key>SelectionStartLine</key>
 			<integer>-1</integer>
 		</dict>
-		<key>file:///Users/vova/Developer/Lakestone/LakestoneGeometry/Silver/LakestoneGeometry.Shared/LakestoneGeometry.Shared.elements_file:///Users/vova/Developer/Lakestone/LakestoneGeometry/Source/Multipoint.swift</key>
+		<key>file:///Users/vova/Developer/Lakestone/LakestoneGeometry/Silver/LakestoneGeometry.Shared/LakestoneGeometry.Shared.elements_file:///Users/vova/Developer/Lakestone/LakestoneGeometry/Source/Line.swift</key>
 		<dict>
 			<key>CursorX</key>
-			<integer>2</integer>
+			<integer>8</integer>
 			<key>CursorY</key>
-			<integer>382</integer>
+			<integer>160</integer>
 			<key>ScrollX</key>
 			<real>0.0</real>
 			<key>ScrollY</key>
-			<real>5311</real>
+			<real>2289</real>
+			<key>SelectionCursorUndecided</key>
+			<false/>
+			<key>SelectionEndColumn</key>
+			<integer>-1</integer>
+			<key>SelectionEndLine</key>
+			<integer>-1</integer>
+			<key>SelectionIsLinear</key>
+			<true/>
+			<key>SelectionStartColumn</key>
+			<integer>-1</integer>
+			<key>SelectionStartLine</key>
+			<integer>-1</integer>
+		</dict>
+		<key>file:///Users/vova/Developer/Lakestone/LakestoneGeometry/Silver/LakestoneGeometry.Shared/LakestoneGeometry.Shared.elements_file:///Users/vova/Developer/Lakestone/LakestoneGeometry/Source/Multipoint.swift</key>
+		<dict>
+			<key>CursorX</key>
+			<integer>50</integer>
+			<key>CursorY</key>
+			<integer>173</integer>
+			<key>ScrollX</key>
+			<real>0.0</real>
+			<key>ScrollY</key>
+			<real>5043</real>
+			<key>SelectionCursorUndecided</key>
+			<false/>
+			<key>SelectionEndColumn</key>
+			<integer>-1</integer>
+			<key>SelectionEndLine</key>
+			<integer>-1</integer>
+			<key>SelectionIsLinear</key>
+			<true/>
+			<key>SelectionStartColumn</key>
+			<integer>-1</integer>
+			<key>SelectionStartLine</key>
+			<integer>-1</integer>
+		</dict>
+		<key>file:///Users/vova/Developer/Lakestone/LakestoneGeometry/Silver/LakestoneGeometry.Shared/LakestoneGeometry.Shared.elements_file:///Users/vova/Developer/Lakestone/LakestoneGeometry/Source/Utilities.swift</key>
+		<dict>
+			<key>CursorX</key>
+			<integer>4</integer>
+			<key>CursorY</key>
+			<integer>108</integer>
+			<key>ScrollX</key>
+			<real>0.0</real>
+			<key>ScrollY</key>
+			<real>1332</real>
 			<key>SelectionCursorUndecided</key>
 			<false/>
 			<key>SelectionEndColumn</key>
@@ -224,6 +284,29 @@
 			<integer>0</integer>
 			<key>CursorY</key>
 			<integer>0</integer>
+			<key>ScrollX</key>
+			<real>0.0</real>
+			<key>ScrollY</key>
+			<real>0.0</real>
+			<key>SelectionCursorUndecided</key>
+			<false/>
+			<key>SelectionEndColumn</key>
+			<integer>0</integer>
+			<key>SelectionEndLine</key>
+			<integer>0</integer>
+			<key>SelectionIsLinear</key>
+			<false/>
+			<key>SelectionStartColumn</key>
+			<integer>0</integer>
+			<key>SelectionStartLine</key>
+			<integer>-1</integer>
+		</dict>
+		<key>file:///Users/vova/Developer/Lakestone/LakestoneGeometry/Silver/LakestoneGeometry.Shared/LakestoneGeometry.Shared.elements_generated://Shared/java%2Elang%2EMath.swift</key>
+		<dict>
+			<key>CursorX</key>
+			<integer>28</integer>
+			<key>CursorY</key>
+			<integer>2</integer>
 			<key>ScrollX</key>
 			<real>0.0</real>
 			<key>ScrollY</key>
@@ -365,7 +448,7 @@
 			<key>ScrollX</key>
 			<real>0.0</real>
 			<key>ScrollY</key>
-			<real>1231</real>
+			<real>1438</real>
 			<key>SelectionCursorUndecided</key>
 			<false/>
 			<key>SelectionEndColumn</key>
@@ -382,13 +465,13 @@
 		<key>file:///Users/vova/Developer/Lakestone/LakestoneGeometry/Silver/LakestoneGeometry.Tests/LakestoneGeometry.Tests.elements_file:///Users/vova/Developer/Lakestone/LakestoneGeometry/Tests/LakestoneGeometryTests/TestCoordinate.swift</key>
 		<dict>
 			<key>CursorX</key>
-			<integer>51</integer>
+			<integer>0</integer>
 			<key>CursorY</key>
-			<integer>53</integer>
+			<integer>38</integer>
 			<key>ScrollX</key>
 			<real>0.0</real>
 			<key>ScrollY</key>
-			<real>567</real>
+			<real>670</real>
 			<key>SelectionCursorUndecided</key>
 			<false/>
 			<key>SelectionEndColumn</key>
@@ -402,6 +485,75 @@
 			<key>SelectionStartLine</key>
 			<integer>-1</integer>
 		</dict>
+		<key>file:///Users/vova/Developer/Lakestone/LakestoneGeometry/Silver/LakestoneGeometry.Tests/LakestoneGeometry.Tests.elements_file:///Users/vova/Developer/Lakestone/LakestoneGeometry/Tests/LakestoneGeometryTests/TestLine.swift</key>
+		<dict>
+			<key>CursorX</key>
+			<integer>70</integer>
+			<key>CursorY</key>
+			<integer>139</integer>
+			<key>ScrollX</key>
+			<real>0.0</real>
+			<key>ScrollY</key>
+			<real>1860</real>
+			<key>SelectionCursorUndecided</key>
+			<false/>
+			<key>SelectionEndColumn</key>
+			<integer>0</integer>
+			<key>SelectionEndLine</key>
+			<integer>0</integer>
+			<key>SelectionIsLinear</key>
+			<true/>
+			<key>SelectionStartColumn</key>
+			<integer>0</integer>
+			<key>SelectionStartLine</key>
+			<integer>-1</integer>
+		</dict>
+		<key>file:///Users/vova/Developer/Lakestone/LakestoneGeometry/Silver/LakestoneGeometry.Tests/LakestoneGeometry.Tests.elements_file:///Users/vova/Developer/Lakestone/LakestoneGeometry/Tests/LakestoneGeometryTests/TestMultiPoint.swift</key>
+		<dict>
+			<key>CursorX</key>
+			<integer>9</integer>
+			<key>CursorY</key>
+			<integer>94</integer>
+			<key>ScrollX</key>
+			<real>0.0</real>
+			<key>ScrollY</key>
+			<real>1030</real>
+			<key>SelectionCursorUndecided</key>
+			<false/>
+			<key>SelectionEndColumn</key>
+			<integer>-1</integer>
+			<key>SelectionEndLine</key>
+			<integer>-1</integer>
+			<key>SelectionIsLinear</key>
+			<true/>
+			<key>SelectionStartColumn</key>
+			<integer>-1</integer>
+			<key>SelectionStartLine</key>
+			<integer>-1</integer>
+		</dict>
+		<key>file:///Users/vova/Developer/Lakestone/LakestoneGeometry/Silver/LakestoneGeometry.Tests/LakestoneGeometry.Tests.elements_file:///Users/vova/Developer/Lakestone/LakestoneGeometry/Tests/LakestoneGeometryTests/TestUtilityFunctions.swift</key>
+		<dict>
+			<key>CursorX</key>
+			<integer>38</integer>
+			<key>CursorY</key>
+			<integer>55</integer>
+			<key>ScrollX</key>
+			<real>0.0</real>
+			<key>ScrollY</key>
+			<real>296</real>
+			<key>SelectionCursorUndecided</key>
+			<false/>
+			<key>SelectionEndColumn</key>
+			<integer>-1</integer>
+			<key>SelectionEndLine</key>
+			<integer>-1</integer>
+			<key>SelectionIsLinear</key>
+			<true/>
+			<key>SelectionStartColumn</key>
+			<integer>-1</integer>
+			<key>SelectionStartLine</key>
+			<integer>-1</integer>
+		</dict>
 		<key>file:///Users/vova/Developer/Lakestone/LakestoneGeometry/Silver/LakestoneGeometry.Tests/LakestoneGeometry.Tests.elements_file:///Users/vova/Developer/Lakestone/LakestoneGeometry/Tests/LakestoneGeometryTests/testUtilities.swift</key>
 		<dict>
 			<key>CursorX</key>
@@ -411,7 +563,7 @@
 			<key>ScrollX</key>
 			<real>0.0</real>
 			<key>ScrollY</key>
-			<real>863</real>
+			<real>361</real>
 			<key>SelectionCursorUndecided</key>
 			<false/>
 			<key>SelectionEndColumn</key>
@@ -477,6 +629,29 @@
 			<integer>0</integer>
 			<key>CursorY</key>
 			<integer>0</integer>
+			<key>ScrollX</key>
+			<real>0.0</real>
+			<key>ScrollY</key>
+			<real>0.0</real>
+			<key>SelectionCursorUndecided</key>
+			<false/>
+			<key>SelectionEndColumn</key>
+			<integer>0</integer>
+			<key>SelectionEndLine</key>
+			<integer>0</integer>
+			<key>SelectionIsLinear</key>
+			<false/>
+			<key>SelectionStartColumn</key>
+			<integer>0</integer>
+			<key>SelectionStartLine</key>
+			<integer>-1</integer>
+		</dict>
+		<key>file:///Users/vova/Developer/Lakestone/LakestoneGeometry/Silver/LakestoneGeometry.Tests/LakestoneGeometry.Tests.elements_generated://Cooper/remobjects%2Eelements%2Eeunit%2EAssert.swift</key>
+		<dict>
+			<key>CursorX</key>
+			<integer>0</integer>
+			<key>CursorY</key>
+			<integer>1</integer>
 			<key>ScrollX</key>
 			<real>0.0</real>
 			<key>ScrollY</key>

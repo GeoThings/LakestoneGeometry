@@ -18,6 +18,12 @@
         <Compile Include="$(MSBuildThisFileDirectory)..\..\Source\Multipoint.swift">
             <VirtualFolder>Sources</VirtualFolder>
         </Compile>
+        <Compile Include="$(MSBuildThisFileDirectory)..\..\Source\Line.swift">
+            <VirtualFolder>Sources</VirtualFolder>
+        </Compile>
+        <Compile Include="$(MSBuildThisFileDirectory)..\..\Source\Utilities.swift">
+            <VirtualFolder>Sources</VirtualFolder>
+        </Compile>
     </ItemGroup>
     <ItemGroup>
         <Folder Include="Sources">

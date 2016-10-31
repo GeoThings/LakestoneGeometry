@@ -36,12 +36,14 @@
     
 #endif
 
+
 public class TestCoordinate: Test {
     
     public func testCoordinates() {
         
         var testCoordinateInt: CoordinateInt
         var testCoordinateDouble: Coordinate
+        var testDouble: Double
         
         let newInt = 4
         let newInt2 = 4
@@ -73,12 +75,24 @@ public class TestCoordinate: Test {
         let testCoordinateDouble2 = Coordinate(x: newDouble, y: 4.5)
         Assert.AreEqual(testCoordinateDouble, testCoordinateDouble2)
         
+        //coordinate operations
+        Assert.AreEqual(distanceBetween(fromPoint: testCoordinateDouble, toPoint: testCoordinateDouble2),
+                        0, Double(1e-15))
+        
+        testCoordinateDouble = Coordinate(x: 3.2, y: 4.1)
+        Assert.AreEqual(distanceBetween(fromPoint: testCoordinateDouble, toPoint: testCoordinateDouble2),
+                        0.5, Double(1e-15))
+        
+        testCoordinateDouble = Coordinate(x: 8, y: 0)
+        testDouble = distanceBetween(fromPoint: testCoordinateDouble, toPoint: testCoordinateDouble2)
+        Assert.AreEqual(testDouble * testDouble, 40.5, Double(1e-15))
+        
         //description check
         Assert.IsTrue(testCoordinateInt.description.contains("3"))
         Assert.IsTrue(testCoordinateInt.description.contains("Coordinate"))
         
-        Assert.IsTrue(testCoordinateDouble.description.contains("\(newDouble)"))
-        Assert.IsTrue(testCoordinateDouble.description.contains("Coordinate"))
+        Assert.IsTrue(testCoordinateDouble2.description.contains("\(newDouble)"))
+        Assert.IsTrue(testCoordinateDouble2.description.contains("Coordinate"))
     }
 }
 
