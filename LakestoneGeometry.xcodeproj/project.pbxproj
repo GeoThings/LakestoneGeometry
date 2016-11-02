@@ -1,0 +1,804 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8034F3C01DBA0249008DC7C5 /* TestBoundingBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8034F3BE1DB9FF08008DC7C5 /* TestBoundingBox.swift */; };
+		804ACE811DC0BB9400479D63 /* TestUtilityFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804ACE801DC0BB9400479D63 /* TestUtilityFunctions.swift */; };
+		8061C6E31DBEF93C007DDFE2 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8061C6E21DBEF93B007DDFE2 /* Utilities.swift */; };
+		80E3F73A1DB8BD1900F09461 /* BoundingBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E3F7391DB8BD1900F09461 /* BoundingBox.swift */; };
+		80E3F73C1DB8BD9E00F09461 /* Multipoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E3F73B1DB8BD9E00F09461 /* Multipoint.swift */; };
+		80F15B111DBDE6F60047F9F7 /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F15B101DBDE6F60047F9F7 /* Line.swift */; };
+		80F15B131DBE1F960047F9F7 /* TestLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F15B121DBE1F960047F9F7 /* TestLine.swift */; };
+		80F15B151DBE1FB60047F9F7 /* TestMultiPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F15B141DBE1FB60047F9F7 /* TestMultiPoint.swift */; };
+		_LinkFileRef_LakestoneCore_via_LakestoneGeometry /* LakestoneCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "_____Product_LakestoneCore" /* LakestoneCore.framework */; };
+		_LinkFileRef_LakestoneCore_via_LakestoneGeometryTests /* LakestoneCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "_____Product_LakestoneCore" /* LakestoneCore.framework */; };
+		_LinkFileRef_LakestoneGeometry_via_LakestoneGeometryTests /* LakestoneGeometry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "_____Product_LakestoneGeometry" /* LakestoneGeometry.framework */; };
+		_LinkFileRef_PerfectCURL_via_LakestoneCore /* PerfectCURL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "_____Product_PerfectCURL" /* PerfectCURL.framework */; };
+		_LinkFileRef_PerfectCURL_via_LakestoneGeometry /* PerfectCURL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "_____Product_PerfectCURL" /* PerfectCURL.framework */; };
+		_LinkFileRef_PerfectCURL_via_LakestoneGeometryTests /* PerfectCURL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "_____Product_PerfectCURL" /* PerfectCURL.framework */; };
+		_LinkFileRef_PerfectThread_via_LakestoneCore /* PerfectThread.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "_____Product_PerfectThread" /* PerfectThread.framework */; };
+		_LinkFileRef_PerfectThread_via_LakestoneGeometry /* PerfectThread.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "_____Product_PerfectThread" /* PerfectThread.framework */; };
+		_LinkFileRef_PerfectThread_via_LakestoneGeometryTests /* PerfectThread.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "_____Product_PerfectThread" /* PerfectThread.framework */; };
+		_LinkFileRef_PerfectThread_via_PerfectCURL /* PerfectThread.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "_____Product_PerfectThread" /* PerfectThread.framework */; };
+		"__src_cc_ref_Packages/LakestoneCore-0.0.5/Source/AnyFileOrDirectory.swift" /* AnyFileOrDirectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = "__PBXFileRef_Packages/LakestoneCore-0.0.5/Source/AnyFileOrDirectory.swift" /* AnyFileOrDirectory.swift */; };
+		"__src_cc_ref_Packages/LakestoneCore-0.0.5/Source/AnyNumeric.swift" /* AnyNumeric.swift in Sources */ = {isa = PBXBuildFile; fileRef = "__PBXFileRef_Packages/LakestoneCore-0.0.5/Source/AnyNumeric.swift" /* AnyNumeric.swift */; };
+		"__src_cc_ref_Packages/LakestoneCore-0.0.5/Source/BoxedNumber.swift" /* BoxedNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = "__PBXFileRef_Packages/LakestoneCore-0.0.5/Source/BoxedNumber.swift" /* BoxedNumber.swift */; };
+		"__src_cc_ref_Packages/LakestoneCore-0.0.5/Source/CustomSerialization.swift" /* CustomSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = "__PBXFileRef_Packages/LakestoneCore-0.0.5/Source/CustomSerialization.swift" /* CustomSerialization.swift */; };
+		"__src_cc_ref_Packages/LakestoneCore-0.0.5/Source/Directory.swift" /* Directory.swift in Sources */ = {isa = PBXBuildFile; fileRef = "__PBXFileRef_Packages/LakestoneCore-0.0.5/Source/Directory.swift" /* Directory.swift */; };
+		"__src_cc_ref_Packages/LakestoneCore-0.0.5/Source/File.swift" /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = "__PBXFileRef_Packages/LakestoneCore-0.0.5/Source/File.swift" /* File.swift */; };
+		"__src_cc_ref_Packages/LakestoneCore-0.0.5/Source/HTTP.swift" /* HTTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = "__PBXFileRef_Packages/LakestoneCore-0.0.5/Source/HTTP.swift" /* HTTP.swift */; };
+		"__src_cc_ref_Packages/LakestoneCore-0.0.5/Source/JSONSerialization.swift" /* JSONSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = "__PBXFileRef_Packages/LakestoneCore-0.0.5/Source/JSONSerialization.swift" /* JSONSerialization.swift */; };
+		"__src_cc_ref_Packages/LakestoneCore-0.0.5/Source/LakestoneError.swift" /* LakestoneError.swift in Sources */ = {isa = PBXBuildFile; fileRef = "__PBXFileRef_Packages/LakestoneCore-0.0.5/Source/LakestoneError.swift" /* LakestoneError.swift */; };
+		"__src_cc_ref_Packages/LakestoneCore-0.0.5/Source/Locale.swift" /* Locale.swift in Sources */ = {isa = PBXBuildFile; fileRef = "__PBXFileRef_Packages/LakestoneCore-0.0.5/Source/Locale.swift" /* Locale.swift */; };
+		"__src_cc_ref_Packages/LakestoneCore-0.0.5/Source/PersistentPropertyList.swift" /* PersistentPropertyList.swift in Sources */ = {isa = PBXBuildFile; fileRef = "__PBXFileRef_Packages/LakestoneCore-0.0.5/Source/PersistentPropertyList.swift" /* PersistentPropertyList.swift */; };
+		"__src_cc_ref_Packages/LakestoneCore-0.0.5/Source/Threading.swift" /* Threading.swift in Sources */ = {isa = PBXBuildFile; fileRef = "__PBXFileRef_Packages/LakestoneCore-0.0.5/Source/Threading.swift" /* Threading.swift */; };
+		"__src_cc_ref_Packages/LakestoneCore-0.0.5/Source/alliases.swift" /* alliases.swift in Sources */ = {isa = PBXBuildFile; fileRef = "__PBXFileRef_Packages/LakestoneCore-0.0.5/Source/alliases.swift" /* alliases.swift */; };
+		"__src_cc_ref_Packages/LakestoneCore-0.0.5/Source/extension_Data.swift" /* extension_Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = "__PBXFileRef_Packages/LakestoneCore-0.0.5/Source/extension_Data.swift" /* extension_Data.swift */; };
+		"__src_cc_ref_Packages/LakestoneCore-0.0.5/Source/extension_Date.swift" /* extension_Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = "__PBXFileRef_Packages/LakestoneCore-0.0.5/Source/extension_Date.swift" /* extension_Date.swift */; };
+		"__src_cc_ref_Packages/LakestoneCore-0.0.5/Source/extension_String.swift" /* extension_String.swift in Sources */ = {isa = PBXBuildFile; fileRef = "__PBXFileRef_Packages/LakestoneCore-0.0.5/Source/extension_String.swift" /* extension_String.swift */; };
+		"__src_cc_ref_Packages/LakestoneCore-0.0.5/Source/extension_URL.swift" /* extension_URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = "__PBXFileRef_Packages/LakestoneCore-0.0.5/Source/extension_URL.swift" /* extension_URL.swift */; };
+		"__src_cc_ref_Packages/LakestoneCore-0.0.5/Source/extension_UUID.swift" /* extension_UUID.swift in Sources */ = {isa = PBXBuildFile; fileRef = "__PBXFileRef_Packages/LakestoneCore-0.0.5/Source/extension_UUID.swift" /* extension_UUID.swift */; };
+		"__src_cc_ref_Packages/PerfectCURL-0.100.1/Sources/cURL.swift" /* cURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = "__PBXFileRef_Packages/PerfectCURL-0.100.1/Sources/cURL.swift" /* cURL.swift */; };
+		"__src_cc_ref_Packages/PerfectThread-0.100.1/Sources/ThreadQueue.swift" /* ThreadQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = "__PBXFileRef_Packages/PerfectThread-0.100.1/Sources/ThreadQueue.swift" /* ThreadQueue.swift */; };
+		"__src_cc_ref_Packages/PerfectThread-0.100.1/Sources/Threading.swift" /* Threading.swift in Sources */ = {isa = PBXBuildFile; fileRef = "__PBXFileRef_Packages/PerfectThread-0.100.1/Sources/Threading.swift" /* Threading.swift */; };
+		__src_cc_ref_Source/Coordinate.swift /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = __PBXFileRef_Source/Coordinate.swift /* Coordinate.swift */; };
+		__src_cc_ref_Tests/LakestoneGeometryTests/TestCoordinate.swift /* TestCoordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = __PBXFileRef_Tests/LakestoneGeometryTests/TestCoordinate.swift /* TestCoordinate.swift */; };
+		__src_cc_ref_Tests/LakestoneGeometryTests/testUtilities.swift /* testUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = __PBXFileRef_Tests/LakestoneGeometryTests/testUtilities.swift /* testUtilities.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		80A391311DB751B400B08300 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = __RootObject_ /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "______Target_PerfectThread";
+			remoteInfo = PerfectThread;
+		};
+		80A391321DB751B400B08300 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = __RootObject_ /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "______Target_PerfectCURL";
+			remoteInfo = PerfectCURL;
+		};
+		80A391331DB751B400B08300 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = __RootObject_ /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "______Target_LakestoneCore";
+			remoteInfo = LakestoneCore;
+		};
+		80A391341DB751B400B08300 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = __RootObject_ /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "______Target_LakestoneGeometry";
+			remoteInfo = LakestoneGeometry;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		8034F3BE1DB9FF08008DC7C5 /* TestBoundingBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestBoundingBox.swift; sourceTree = "<group>"; };
+		804ACE801DC0BB9400479D63 /* TestUtilityFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestUtilityFunctions.swift; sourceTree = "<group>"; };
+		8061C6E21DBEF93B007DDFE2 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		80E3F7391DB8BD1900F09461 /* BoundingBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoundingBox.swift; sourceTree = "<group>"; };
+		80E3F73B1DB8BD9E00F09461 /* Multipoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Multipoint.swift; sourceTree = "<group>"; };
+		80F15B101DBDE6F60047F9F7 /* Line.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
+		80F15B121DBE1F960047F9F7 /* TestLine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestLine.swift; sourceTree = "<group>"; };
+		80F15B141DBE1FB60047F9F7 /* TestMultiPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestMultiPoint.swift; sourceTree = "<group>"; };
+		__PBXFileRef_LakestoneGeometry.xcodeproj/Configs/Project.xcconfig /* LakestoneGeometry.xcodeproj/Configs/Project.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = LakestoneGeometry.xcodeproj/Configs/Project.xcconfig; sourceTree = "<group>"; };
+		__PBXFileRef_Package.swift /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
+		"__PBXFileRef_Packages/LakestoneCore-0.0.5/Source/AnyFileOrDirectory.swift" /* AnyFileOrDirectory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyFileOrDirectory.swift; sourceTree = "<group>"; };
+		"__PBXFileRef_Packages/LakestoneCore-0.0.5/Source/AnyNumeric.swift" /* AnyNumeric.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyNumeric.swift; sourceTree = "<group>"; };
+		"__PBXFileRef_Packages/LakestoneCore-0.0.5/Source/BoxedNumber.swift" /* BoxedNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxedNumber.swift; sourceTree = "<group>"; };
+		"__PBXFileRef_Packages/LakestoneCore-0.0.5/Source/CustomSerialization.swift" /* CustomSerialization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSerialization.swift; sourceTree = "<group>"; };
+		"__PBXFileRef_Packages/LakestoneCore-0.0.5/Source/Directory.swift" /* Directory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Directory.swift; sourceTree = "<group>"; };
+		"__PBXFileRef_Packages/LakestoneCore-0.0.5/Source/File.swift" /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		"__PBXFileRef_Packages/LakestoneCore-0.0.5/Source/HTTP.swift" /* HTTP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTP.swift; sourceTree = "<group>"; };
+		"__PBXFileRef_Packages/LakestoneCore-0.0.5/Source/JSONSerialization.swift" /* JSONSerialization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONSerialization.swift; sourceTree = "<group>"; };
+		"__PBXFileRef_Packages/LakestoneCore-0.0.5/Source/LakestoneError.swift" /* LakestoneError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LakestoneError.swift; sourceTree = "<group>"; };
+		"__PBXFileRef_Packages/LakestoneCore-0.0.5/Source/Locale.swift" /* Locale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Locale.swift; sourceTree = "<group>"; };
+		"__PBXFileRef_Packages/LakestoneCore-0.0.5/Source/PersistentPropertyList.swift" /* PersistentPropertyList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentPropertyList.swift; sourceTree = "<group>"; };
+		"__PBXFileRef_Packages/LakestoneCore-0.0.5/Source/Threading.swift" /* Threading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Threading.swift; sourceTree = "<group>"; };
+		"__PBXFileRef_Packages/LakestoneCore-0.0.5/Source/alliases.swift" /* alliases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = alliases.swift; sourceTree = "<group>"; };
+		"__PBXFileRef_Packages/LakestoneCore-0.0.5/Source/extension_Data.swift" /* extension_Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extension_Data.swift; sourceTree = "<group>"; };
+		"__PBXFileRef_Packages/LakestoneCore-0.0.5/Source/extension_Date.swift" /* extension_Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extension_Date.swift; sourceTree = "<group>"; };
+		"__PBXFileRef_Packages/LakestoneCore-0.0.5/Source/extension_String.swift" /* extension_String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extension_String.swift; sourceTree = "<group>"; };
+		"__PBXFileRef_Packages/LakestoneCore-0.0.5/Source/extension_URL.swift" /* extension_URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extension_URL.swift; sourceTree = "<group>"; };
+		"__PBXFileRef_Packages/LakestoneCore-0.0.5/Source/extension_UUID.swift" /* extension_UUID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extension_UUID.swift; sourceTree = "<group>"; };
+		"__PBXFileRef_Packages/PerfectCURL-0.100.1/Sources/cURL.swift" /* cURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cURL.swift; sourceTree = "<group>"; };
+		"__PBXFileRef_Packages/PerfectThread-0.100.1/Sources/ThreadQueue.swift" /* ThreadQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadQueue.swift; sourceTree = "<group>"; };
+		"__PBXFileRef_Packages/PerfectThread-0.100.1/Sources/Threading.swift" /* Threading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Threading.swift; sourceTree = "<group>"; };
+		__PBXFileRef_Source/Coordinate.swift /* Coordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
+		__PBXFileRef_Tests/LakestoneGeometryTests/TestCoordinate.swift /* TestCoordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCoordinate.swift; sourceTree = "<group>"; };
+		__PBXFileRef_Tests/LakestoneGeometryTests/testUtilities.swift /* testUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testUtilities.swift; sourceTree = "<group>"; };
+		"_____Product_LakestoneCore" /* LakestoneCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = LakestoneCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		"_____Product_LakestoneGeometry" /* LakestoneGeometry.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = LakestoneGeometry.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		"_____Product_LakestoneGeometryTests" /* LakestoneGeometryTests.xctest */ = {isa = PBXFileReference; lastKnownFileType = file; path = LakestoneGeometryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		"_____Product_PerfectCURL" /* PerfectCURL.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = PerfectCURL.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		"_____Product_PerfectThread" /* PerfectThread.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = PerfectThread.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		"___LinkPhase_LakestoneCore" /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 0;
+			files = (
+				_LinkFileRef_PerfectThread_via_LakestoneCore /* PerfectThread.framework in Frameworks */,
+				_LinkFileRef_PerfectCURL_via_LakestoneCore /* PerfectCURL.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		"___LinkPhase_LakestoneGeometry" /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 0;
+			files = (
+				_LinkFileRef_PerfectThread_via_LakestoneGeometry /* PerfectThread.framework in Frameworks */,
+				_LinkFileRef_PerfectCURL_via_LakestoneGeometry /* PerfectCURL.framework in Frameworks */,
+				_LinkFileRef_LakestoneCore_via_LakestoneGeometry /* LakestoneCore.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		"___LinkPhase_LakestoneGeometryTests" /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 0;
+			files = (
+				_LinkFileRef_PerfectThread_via_LakestoneGeometryTests /* PerfectThread.framework in Frameworks */,
+				_LinkFileRef_PerfectCURL_via_LakestoneGeometryTests /* PerfectCURL.framework in Frameworks */,
+				_LinkFileRef_LakestoneCore_via_LakestoneGeometryTests /* LakestoneCore.framework in Frameworks */,
+				_LinkFileRef_LakestoneGeometry_via_LakestoneGeometryTests /* LakestoneGeometry.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		"___LinkPhase_PerfectCURL" /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 0;
+			files = (
+				_LinkFileRef_PerfectThread_via_PerfectCURL /* PerfectThread.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		"___LinkPhase_PerfectThread" /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		Dependencies_ /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				"_______Group_LakestoneCore" /* LakestoneCore */,
+				"_______Group_PerfectCURL" /* PerfectCURL */,
+				"_______Group_PerfectThread" /* PerfectThread */,
+			);
+			name = Dependencies;
+			sourceTree = "<group>";
+		};
+		TestProducts_ /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				"_____Product_LakestoneGeometryTests" /* LakestoneGeometryTests.xctest */,
+			);
+			name = Tests;
+			sourceTree = "<group>";
+		};
+		"___RootGroup_" = {
+			isa = PBXGroup;
+			children = (
+				__PBXFileRef_Package.swift /* Package.swift */,
+				"_____Configs_" /* Configs */,
+				"_____Sources_" /* Sources */,
+				Dependencies_ /* Dependencies */,
+				"_______Tests_" /* Tests */,
+				"____Products_" /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		"____Products_" /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				TestProducts_ /* Tests */,
+				"_____Product_PerfectThread" /* PerfectThread.framework */,
+				"_____Product_PerfectCURL" /* PerfectCURL.framework */,
+				"_____Product_LakestoneCore" /* LakestoneCore.framework */,
+				"_____Product_LakestoneGeometry" /* LakestoneGeometry.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		"_____Configs_" /* Configs */ = {
+			isa = PBXGroup;
+			children = (
+				__PBXFileRef_LakestoneGeometry.xcodeproj/Configs/Project.xcconfig /* LakestoneGeometry.xcodeproj/Configs/Project.xcconfig */,
+			);
+			name = Configs;
+			sourceTree = "<group>";
+		};
+		"_____Sources_" /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				"_______Group_LakestoneGeometry" /* LakestoneGeometry */,
+			);
+			name = Sources;
+			sourceTree = "<group>";
+		};
+		"_______Group_LakestoneCore" /* LakestoneCore */ = {
+			isa = PBXGroup;
+			children = (
+				"__PBXFileRef_Packages/LakestoneCore-0.0.5/Source/alliases.swift" /* alliases.swift */,
+				"__PBXFileRef_Packages/LakestoneCore-0.0.5/Source/AnyFileOrDirectory.swift" /* AnyFileOrDirectory.swift */,
+				"__PBXFileRef_Packages/LakestoneCore-0.0.5/Source/AnyNumeric.swift" /* AnyNumeric.swift */,
+				"__PBXFileRef_Packages/LakestoneCore-0.0.5/Source/BoxedNumber.swift" /* BoxedNumber.swift */,
+				"__PBXFileRef_Packages/LakestoneCore-0.0.5/Source/CustomSerialization.swift" /* CustomSerialization.swift */,
+				"__PBXFileRef_Packages/LakestoneCore-0.0.5/Source/Directory.swift" /* Directory.swift */,
+				"__PBXFileRef_Packages/LakestoneCore-0.0.5/Source/extension_Data.swift" /* extension_Data.swift */,
+				"__PBXFileRef_Packages/LakestoneCore-0.0.5/Source/extension_Date.swift" /* extension_Date.swift */,
+				"__PBXFileRef_Packages/LakestoneCore-0.0.5/Source/extension_String.swift" /* extension_String.swift */,
+				"__PBXFileRef_Packages/LakestoneCore-0.0.5/Source/extension_URL.swift" /* extension_URL.swift */,
+				"__PBXFileRef_Packages/LakestoneCore-0.0.5/Source/extension_UUID.swift" /* extension_UUID.swift */,
+				"__PBXFileRef_Packages/LakestoneCore-0.0.5/Source/File.swift" /* File.swift */,
+				"__PBXFileRef_Packages/LakestoneCore-0.0.5/Source/HTTP.swift" /* HTTP.swift */,
+				"__PBXFileRef_Packages/LakestoneCore-0.0.5/Source/JSONSerialization.swift" /* JSONSerialization.swift */,
+				"__PBXFileRef_Packages/LakestoneCore-0.0.5/Source/LakestoneError.swift" /* LakestoneError.swift */,
+				"__PBXFileRef_Packages/LakestoneCore-0.0.5/Source/Locale.swift" /* Locale.swift */,
+				"__PBXFileRef_Packages/LakestoneCore-0.0.5/Source/PersistentPropertyList.swift" /* PersistentPropertyList.swift */,
+				"__PBXFileRef_Packages/LakestoneCore-0.0.5/Source/Threading.swift" /* Threading.swift */,
+			);
+			name = LakestoneCore;
+			path = "Packages/LakestoneCore-0.0.5/Source";
+			sourceTree = "<group>";
+		};
+		"_______Group_LakestoneGeometry" /* LakestoneGeometry */ = {
+			isa = PBXGroup;
+			children = (
+				__PBXFileRef_Source/Coordinate.swift /* Coordinate.swift */,
+				80E3F7391DB8BD1900F09461 /* BoundingBox.swift */,
+				80F15B101DBDE6F60047F9F7 /* Line.swift */,
+				80E3F73B1DB8BD9E00F09461 /* Multipoint.swift */,
+				8061C6E21DBEF93B007DDFE2 /* Utilities.swift */,
+			);
+			name = LakestoneGeometry;
+			path = Source;
+			sourceTree = "<group>";
+		};
+		"_______Group_LakestoneGeometryTests" /* LakestoneGeometryTests */ = {
+			isa = PBXGroup;
+			children = (
+				8034F3BE1DB9FF08008DC7C5 /* TestBoundingBox.swift */,
+				__PBXFileRef_Tests/LakestoneGeometryTests/TestCoordinate.swift /* TestCoordinate.swift */,
+				80F15B121DBE1F960047F9F7 /* TestLine.swift */,
+				80F15B141DBE1FB60047F9F7 /* TestMultiPoint.swift */,
+				804ACE801DC0BB9400479D63 /* TestUtilityFunctions.swift */,
+				__PBXFileRef_Tests/LakestoneGeometryTests/testUtilities.swift /* testUtilities.swift */,
+			);
+			name = LakestoneGeometryTests;
+			path = Tests/LakestoneGeometryTests;
+			sourceTree = "<group>";
+		};
+		"_______Group_PerfectCURL" /* PerfectCURL */ = {
+			isa = PBXGroup;
+			children = (
+				"__PBXFileRef_Packages/PerfectCURL-0.100.1/Sources/cURL.swift" /* cURL.swift */,
+			);
+			name = PerfectCURL;
+			path = "Packages/PerfectCURL-0.100.1/Sources";
+			sourceTree = "<group>";
+		};
+		"_______Group_PerfectThread" /* PerfectThread */ = {
+			isa = PBXGroup;
+			children = (
+				"__PBXFileRef_Packages/PerfectThread-0.100.1/Sources/Threading.swift" /* Threading.swift */,
+				"__PBXFileRef_Packages/PerfectThread-0.100.1/Sources/ThreadQueue.swift" /* ThreadQueue.swift */,
+			);
+			name = PerfectThread;
+			path = "Packages/PerfectThread-0.100.1/Sources";
+			sourceTree = "<group>";
+		};
+		"_______Tests_" /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				"_______Group_LakestoneGeometryTests" /* LakestoneGeometryTests */,
+			);
+			name = Tests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		"______Target_LakestoneCore" /* LakestoneCore */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = "_______Confs_LakestoneCore" /* Build configuration list for PBXNativeTarget "LakestoneCore" */;
+			buildPhases = (
+				CompilePhase_LakestoneCore /* Sources */,
+				"___LinkPhase_LakestoneCore" /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				__Dependency_PerfectThread /* PBXTargetDependency */,
+				__Dependency_PerfectCURL /* PBXTargetDependency */,
+			);
+			name = LakestoneCore;
+			productName = LakestoneCore;
+			productReference = "_____Product_LakestoneCore" /* LakestoneCore.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		"______Target_LakestoneGeometry" /* LakestoneGeometry */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = "_______Confs_LakestoneGeometry" /* Build configuration list for PBXNativeTarget "LakestoneGeometry" */;
+			buildPhases = (
+				CompilePhase_LakestoneGeometry /* Sources */,
+				"___LinkPhase_LakestoneGeometry" /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				__Dependency_PerfectThread /* PBXTargetDependency */,
+				__Dependency_PerfectCURL /* PBXTargetDependency */,
+				__Dependency_LakestoneCore /* PBXTargetDependency */,
+			);
+			name = LakestoneGeometry;
+			productName = LakestoneGeometry;
+			productReference = "_____Product_LakestoneGeometry" /* LakestoneGeometry.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		"______Target_LakestoneGeometryTests" /* LakestoneGeometryTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = "_______Confs_LakestoneGeometryTests" /* Build configuration list for PBXNativeTarget "LakestoneGeometryTests" */;
+			buildPhases = (
+				CompilePhase_LakestoneGeometryTests /* Sources */,
+				"___LinkPhase_LakestoneGeometryTests" /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				__Dependency_PerfectThread /* PBXTargetDependency */,
+				__Dependency_PerfectCURL /* PBXTargetDependency */,
+				__Dependency_LakestoneCore /* PBXTargetDependency */,
+				__Dependency_LakestoneGeometry /* PBXTargetDependency */,
+			);
+			name = LakestoneGeometryTests;
+			productName = LakestoneGeometryTests;
+			productReference = "_____Product_LakestoneGeometryTests" /* LakestoneGeometryTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		"______Target_PerfectCURL" /* PerfectCURL */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = "_______Confs_PerfectCURL" /* Build configuration list for PBXNativeTarget "PerfectCURL" */;
+			buildPhases = (
+				CompilePhase_PerfectCURL /* Sources */,
+				"___LinkPhase_PerfectCURL" /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				__Dependency_PerfectThread /* PBXTargetDependency */,
+			);
+			name = PerfectCURL;
+			productName = PerfectCURL;
+			productReference = "_____Product_PerfectCURL" /* PerfectCURL.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		"______Target_PerfectThread" /* PerfectThread */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = "_______Confs_PerfectThread" /* Build configuration list for PBXNativeTarget "PerfectThread" */;
+			buildPhases = (
+				CompilePhase_PerfectThread /* Sources */,
+				"___LinkPhase_PerfectThread" /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PerfectThread;
+			productName = PerfectThread;
+			productReference = "_____Product_PerfectThread" /* PerfectThread.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		__RootObject_ /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0800;
+				LastUpgradeCheck = 9999;
+			};
+			buildConfigurationList = "___RootConfs_" /* Build configuration list for PBXProject "LakestoneGeometry" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = "___RootGroup_";
+			productRefGroup = "____Products_" /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				"______Target_PerfectThread" /* PerfectThread */,
+				"______Target_PerfectCURL" /* PerfectCURL */,
+				"______Target_LakestoneCore" /* LakestoneCore */,
+				"______Target_LakestoneGeometry" /* LakestoneGeometry */,
+				"______Target_LakestoneGeometryTests" /* LakestoneGeometryTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CompilePhase_LakestoneCore /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				"__src_cc_ref_Packages/LakestoneCore-0.0.5/Source/alliases.swift" /* alliases.swift in Sources */,
+				"__src_cc_ref_Packages/LakestoneCore-0.0.5/Source/AnyFileOrDirectory.swift" /* AnyFileOrDirectory.swift in Sources */,
+				"__src_cc_ref_Packages/LakestoneCore-0.0.5/Source/AnyNumeric.swift" /* AnyNumeric.swift in Sources */,
+				"__src_cc_ref_Packages/LakestoneCore-0.0.5/Source/BoxedNumber.swift" /* BoxedNumber.swift in Sources */,
+				"__src_cc_ref_Packages/LakestoneCore-0.0.5/Source/CustomSerialization.swift" /* CustomSerialization.swift in Sources */,
+				"__src_cc_ref_Packages/LakestoneCore-0.0.5/Source/Directory.swift" /* Directory.swift in Sources */,
+				"__src_cc_ref_Packages/LakestoneCore-0.0.5/Source/extension_Data.swift" /* extension_Data.swift in Sources */,
+				"__src_cc_ref_Packages/LakestoneCore-0.0.5/Source/extension_Date.swift" /* extension_Date.swift in Sources */,
+				"__src_cc_ref_Packages/LakestoneCore-0.0.5/Source/extension_String.swift" /* extension_String.swift in Sources */,
+				"__src_cc_ref_Packages/LakestoneCore-0.0.5/Source/extension_URL.swift" /* extension_URL.swift in Sources */,
+				"__src_cc_ref_Packages/LakestoneCore-0.0.5/Source/extension_UUID.swift" /* extension_UUID.swift in Sources */,
+				"__src_cc_ref_Packages/LakestoneCore-0.0.5/Source/File.swift" /* File.swift in Sources */,
+				"__src_cc_ref_Packages/LakestoneCore-0.0.5/Source/HTTP.swift" /* HTTP.swift in Sources */,
+				"__src_cc_ref_Packages/LakestoneCore-0.0.5/Source/JSONSerialization.swift" /* JSONSerialization.swift in Sources */,
+				"__src_cc_ref_Packages/LakestoneCore-0.0.5/Source/LakestoneError.swift" /* LakestoneError.swift in Sources */,
+				"__src_cc_ref_Packages/LakestoneCore-0.0.5/Source/Locale.swift" /* Locale.swift in Sources */,
+				"__src_cc_ref_Packages/LakestoneCore-0.0.5/Source/PersistentPropertyList.swift" /* PersistentPropertyList.swift in Sources */,
+				"__src_cc_ref_Packages/LakestoneCore-0.0.5/Source/Threading.swift" /* Threading.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CompilePhase_LakestoneGeometry /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				80E3F73C1DB8BD9E00F09461 /* Multipoint.swift in Sources */,
+				80F15B111DBDE6F60047F9F7 /* Line.swift in Sources */,
+				80E3F73A1DB8BD1900F09461 /* BoundingBox.swift in Sources */,
+				8061C6E31DBEF93C007DDFE2 /* Utilities.swift in Sources */,
+				__src_cc_ref_Source/Coordinate.swift /* Coordinate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CompilePhase_LakestoneGeometryTests /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				8034F3C01DBA0249008DC7C5 /* TestBoundingBox.swift in Sources */,
+				80F15B131DBE1F960047F9F7 /* TestLine.swift in Sources */,
+				__src_cc_ref_Tests/LakestoneGeometryTests/TestCoordinate.swift /* TestCoordinate.swift in Sources */,
+				__src_cc_ref_Tests/LakestoneGeometryTests/testUtilities.swift /* testUtilities.swift in Sources */,
+				804ACE811DC0BB9400479D63 /* TestUtilityFunctions.swift in Sources */,
+				80F15B151DBE1FB60047F9F7 /* TestMultiPoint.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CompilePhase_PerfectCURL /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				"__src_cc_ref_Packages/PerfectCURL-0.100.1/Sources/cURL.swift" /* cURL.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CompilePhase_PerfectThread /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				"__src_cc_ref_Packages/PerfectThread-0.100.1/Sources/Threading.swift" /* Threading.swift in Sources */,
+				"__src_cc_ref_Packages/PerfectThread-0.100.1/Sources/ThreadQueue.swift" /* ThreadQueue.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		__Dependency_LakestoneCore /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "______Target_LakestoneCore" /* LakestoneCore */;
+			targetProxy = 80A391331DB751B400B08300 /* PBXContainerItemProxy */;
+		};
+		__Dependency_LakestoneGeometry /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "______Target_LakestoneGeometry" /* LakestoneGeometry */;
+			targetProxy = 80A391341DB751B400B08300 /* PBXContainerItemProxy */;
+		};
+		__Dependency_PerfectCURL /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "______Target_PerfectCURL" /* PerfectCURL */;
+			targetProxy = 80A391321DB751B400B08300 /* PBXContainerItemProxy */;
+		};
+		__Dependency_PerfectThread /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "______Target_PerfectThread" /* PerfectThread */;
+			targetProxy = 80A391311DB751B400B08300 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		_ReleaseConf_LakestoneCore /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(PLATFORM_DIR)/Developer/Library/Frameworks";
+				HEADER_SEARCH_PATHS = "/Users/vova/Developer/Lakestone/LakestoneGeometry/Packages/cURL-2.0.0";
+				INFOPLIST_FILE = LakestoneGeometry.xcodeproj/LakestoneCore_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-L/usr/local/Cellar/curl/7.50.3/lib",
+					"-lcurl",
+				);
+				OTHER_SWIFT_FLAGS = "$(inherited) -I/usr/local/Cellar/curl/7.50.3/include";
+				PRODUCT_BUNDLE_IDENTIFIER = LakestoneCore;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		_ReleaseConf_LakestoneGeometry /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(PLATFORM_DIR)/Developer/Library/Frameworks";
+				HEADER_SEARCH_PATHS = "/Users/vova/Developer/Lakestone/LakestoneGeometry/Packages/cURL-2.0.0";
+				INFOPLIST_FILE = LakestoneGeometry.xcodeproj/LakestoneGeometry_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-L/usr/local/Cellar/curl/7.50.3/lib",
+					"-lcurl",
+				);
+				OTHER_SWIFT_FLAGS = "$(inherited) -I/usr/local/Cellar/curl/7.50.3/include";
+				PRODUCT_BUNDLE_IDENTIFIER = LakestoneGeometry;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		_ReleaseConf_LakestoneGeometryTests /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(PLATFORM_DIR)/Developer/Library/Frameworks";
+				HEADER_SEARCH_PATHS = "/Users/vova/Developer/Lakestone/LakestoneGeometry/Packages/cURL-2.0.0";
+				INFOPLIST_FILE = LakestoneGeometry.xcodeproj/LakestoneGeometryTests_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-L/usr/local/Cellar/curl/7.50.3/lib",
+					"-lcurl",
+				);
+				OTHER_SWIFT_FLAGS = "$(inherited) -I/usr/local/Cellar/curl/7.50.3/include";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		_ReleaseConf_PerfectCURL /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(PLATFORM_DIR)/Developer/Library/Frameworks";
+				HEADER_SEARCH_PATHS = "/Users/vova/Developer/Lakestone/LakestoneGeometry/Packages/cURL-2.0.0";
+				INFOPLIST_FILE = LakestoneGeometry.xcodeproj/PerfectCURL_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-L/usr/local/Cellar/curl/7.50.3/lib",
+					"-lcurl",
+				);
+				OTHER_SWIFT_FLAGS = "$(inherited) -I/usr/local/Cellar/curl/7.50.3/include";
+				PRODUCT_BUNDLE_IDENTIFIER = PerfectCURL;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		_ReleaseConf_PerfectThread /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(PLATFORM_DIR)/Developer/Library/Frameworks";
+				INFOPLIST_FILE = LakestoneGeometry.xcodeproj/PerfectThread_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = PerfectThread;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		"___DebugConf_LakestoneCore" /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(PLATFORM_DIR)/Developer/Library/Frameworks";
+				HEADER_SEARCH_PATHS = "/Users/vova/Developer/Lakestone/LakestoneGeometry/Packages/cURL-2.0.0";
+				INFOPLIST_FILE = LakestoneGeometry.xcodeproj/LakestoneCore_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-L/usr/local/Cellar/curl/7.50.3/lib",
+					"-lcurl",
+				);
+				OTHER_SWIFT_FLAGS = "$(inherited) -I/usr/local/Cellar/curl/7.50.3/include";
+				PRODUCT_BUNDLE_IDENTIFIER = LakestoneCore;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		"___DebugConf_LakestoneGeometry" /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(PLATFORM_DIR)/Developer/Library/Frameworks";
+				HEADER_SEARCH_PATHS = "/Users/vova/Developer/Lakestone/LakestoneGeometry/Packages/cURL-2.0.0";
+				INFOPLIST_FILE = LakestoneGeometry.xcodeproj/LakestoneGeometry_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-L/usr/local/Cellar/curl/7.50.3/lib",
+					"-lcurl",
+				);
+				OTHER_SWIFT_FLAGS = "$(inherited) -I/usr/local/Cellar/curl/7.50.3/include";
+				PRODUCT_BUNDLE_IDENTIFIER = LakestoneGeometry;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		"___DebugConf_LakestoneGeometryTests" /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(PLATFORM_DIR)/Developer/Library/Frameworks";
+				HEADER_SEARCH_PATHS = "/Users/vova/Developer/Lakestone/LakestoneGeometry/Packages/cURL-2.0.0";
+				INFOPLIST_FILE = LakestoneGeometry.xcodeproj/LakestoneGeometryTests_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-L/usr/local/Cellar/curl/7.50.3/lib",
+					"-lcurl",
+				);
+				OTHER_SWIFT_FLAGS = "$(inherited) -I/usr/local/Cellar/curl/7.50.3/include";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		"___DebugConf_PerfectCURL" /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(PLATFORM_DIR)/Developer/Library/Frameworks";
+				HEADER_SEARCH_PATHS = "/Users/vova/Developer/Lakestone/LakestoneGeometry/Packages/cURL-2.0.0";
+				INFOPLIST_FILE = LakestoneGeometry.xcodeproj/PerfectCURL_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-L/usr/local/Cellar/curl/7.50.3/lib",
+					"-lcurl",
+				);
+				OTHER_SWIFT_FLAGS = "$(inherited) -I/usr/local/Cellar/curl/7.50.3/include";
+				PRODUCT_BUNDLE_IDENTIFIER = PerfectCURL;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		"___DebugConf_PerfectThread" /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(PLATFORM_DIR)/Developer/Library/Frameworks";
+				INFOPLIST_FILE = LakestoneGeometry.xcodeproj/PerfectThread_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = PerfectThread;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		"_____Release_" /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = __PBXFileRef_LakestoneGeometry.xcodeproj/Configs/Project.xcconfig /* LakestoneGeometry.xcodeproj/Configs/Project.xcconfig */;
+			buildSettings = {
+			};
+			name = Release;
+		};
+		"_______Debug_" /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = __PBXFileRef_LakestoneGeometry.xcodeproj/Configs/Project.xcconfig /* LakestoneGeometry.xcodeproj/Configs/Project.xcconfig */;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		"___RootConfs_" /* Build configuration list for PBXProject "LakestoneGeometry" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				"_______Debug_" /* Debug */,
+				"_____Release_" /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		"_______Confs_LakestoneCore" /* Build configuration list for PBXNativeTarget "LakestoneCore" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				"___DebugConf_LakestoneCore" /* Debug */,
+				_ReleaseConf_LakestoneCore /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		"_______Confs_LakestoneGeometry" /* Build configuration list for PBXNativeTarget "LakestoneGeometry" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				"___DebugConf_LakestoneGeometry" /* Debug */,
+				_ReleaseConf_LakestoneGeometry /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		"_______Confs_LakestoneGeometryTests" /* Build configuration list for PBXNativeTarget "LakestoneGeometryTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				"___DebugConf_LakestoneGeometryTests" /* Debug */,
+				_ReleaseConf_LakestoneGeometryTests /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		"_______Confs_PerfectCURL" /* Build configuration list for PBXNativeTarget "PerfectCURL" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				"___DebugConf_PerfectCURL" /* Debug */,
+				_ReleaseConf_PerfectCURL /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		"_______Confs_PerfectThread" /* Build configuration list for PBXNativeTarget "PerfectThread" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				"___DebugConf_PerfectThread" /* Debug */,
+				_ReleaseConf_PerfectThread /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = __RootObject_ /* Project object */;
+}

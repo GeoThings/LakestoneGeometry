@@ -1,0 +1,12 @@
+Packages/
+.build/
+Silver/LakestoneGeometry.Android/bin/
+Silver/LakestoneGeometry.Android/obj/
+Silver/LakestoneGeometry.Tests/bin/
+Silver/LakestoneGeometry.Tests/obj/
+Silver/LakestoneGeometry.sln.fire.cache
+Silver/LakestoneGeometry.sln.fire.user
+Silver/LakestoneGeometry.Android/LakestoneGeometry.Android.elements.user
+Silver/LakestoneGeometry.Tests/LakestoneGeometry.Tests.elements.user
+LakestoneGeometry.xcodeproj/project.xcworkspace/
+LakestoneGeometry.xcodeproj/xcuserdata/
